@@ -1,0 +1,15 @@
+{:source-paths
+  ["src/app"
+   "src/storybook"]
+
+ :dev-http {8080 "public"}
+
+ :dependencies
+ [[reagent "1.0.0"]]
+
+ :builds
+ {:frontend {:target :browser
+             :modules {:main {:init-fn acme.core/init}}}
+  :storybook {:target :npm-module
+              :entries [acme.stories.header-stories]
+              :output-dir "public/js/storybook"}}}
